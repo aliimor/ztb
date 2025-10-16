@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>زرین تجارت بهروش — شریک استراتژیک صنعت فولاد</title>
+<style>
+/* پایه */
+body {
+  margin: 0;
+  font-family: Calibri, sans-serif;
+  background-color: #fdf6f0; /* پس‌زمینه نسکافه‌ای روشن */
+  color: #222; /* متن اصلی مشکی */
+  direction: rtl;
+  scroll-behavior: smooth;
+}
+
+/* لینک‌ها */
+a { text-decoration: none; }
+
+/* هدر */
+header {
+  background-color: #fff; /* سفید روشن */
+  padding: 20px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  border-radius: 0 0 10px 10px;
+}
+header .logo img { height: 60px; }
+header nav a {
+  color: #222;
+  margin: 0 15px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+header nav a:hover { color: #cfa15f; } /* طلایی کم‌رنگ */
+header a.button {
+  background-color: #cfa15f; /* طلایی روشن */
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+header a.button:hover {
+  background-color: #e0b76c;
+  transform: scale(1.05);
+}
+
+/* Hero */
+#hero {
+  display: flex;
+  align-items: flex-start;   /* متن به بالا منتقل میشه */
+  justify-content: center;   /* متن وسط افقی قرار می‌گیره */
+  background: url('hero.jpg') no-repeat center/cover;
+  position: relative;
+  min-height: 400px;
+  color: #222;
+  overflow: hidden;
+  border-radius: 10px;
+  padding-top: 15%;          /* فاصله از بالا برای قرارگیری در یک‌سوم بالایی */
+}
+
+#hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(255,255,255,0.2);
+  z-index: 0;
+}
+
+#hero .hero-text {
+  position: absolute;
+  top: -3%;              /* جای متن از بالا - تنظیم‌پذیره */
+  left: 35%;
+  transform: translateX(-50%); /* دقیقاً وسط افقی */
+  z-index: 1;
+  max-width: 600px;
+  text-align: center;
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+#hero h1 { font-size: 48px; color: #cfa15f; margin-bottom: 20px; }
+#hero h2 { font-size: 28px; margin-bottom: 20px; }
+#hero p { font-size: 18px; line-height: 1.6; margin-bottom: 30px; }
+#hero .button { font-size: 18px; }
+
+/* بخش‌ها */
+section {
+  padding: 80px 50px;
+  text-align: right;
+  background-color: #fff;
+  opacity:0;
+  transform: translateY(20px);
+  transition: all 1s ease;
+  border-radius: 10px;
+  margin: 20px 0;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+section h2 { color: #cfa15f; font-size: 32px; margin-bottom: 30px; }
+section p { color: #222; line-height: 1.6; }
+
+/* کارت‌ها */
+.products-grid, .export-grid { display:flex; flex-wrap: wrap; gap:20px; }
+.product-card, .export-card, .contact-card {
+  background-color:#fff;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.08);
+  flex:1 1 250px;
+  transition: all 0.3s;
+}
+.product-card:hover, .export-card:hover { transform: translateY(-5px) scale(1.03); }
+.product-card h3, .export-card h3 { color: #cfa15f; margin-bottom: 10px; }
+.product-card p, .export-card p { color: #555; }
+
+/* صادرات */
+.export-grid { gap:20px; }
+.export-card { text-align:center; }
+.export-card img { width:60px; margin-bottom:10px; }
+
+/* تماس با ما */
+.contact-card { display:flex; flex-direction: column; gap:10px; max-width:500px; }
+
+/* فوتر */
+footer { background-color:#fff; text-align:right; padding:20px; color:#555; border-radius:10px; box-shadow:0 -3px 10px rgba(0,0,0,0.05);}
+footer a { color: #cfa15f; }
+
+/* انیمیشن‌ها */
+.visible { opacity:1 !important; transform: translateY(0) !important; }
+
+/* Responsive */
+@media(max-width:900px){
+  #hero { flex-direction: column; text-align:center; }
+  #hero .hero-text { max-width:100%; }
+  .products-grid, .export-grid { flex-direction: column; }
+  header { flex-direction: column; gap: 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- هدر -->
+<header>
+  <div class="logo"><img src="C:\Users\Ali Mortazavi\Desktop\Site\ZTB2.png" alt="زرین تجارت بهروش"></div>
+  <nav>
+    <a href="#about">درباره ما</a>
+    <a href="#products">حوزه فعالیت</a>
+    <a href="#export">صادرات</a>
+    <a href="#contact">تماس</a>
+  </nav>
+  <a href="https://ironeed.com" class="button">ورود به فروشگاه</a>
+</header>
+
+<!-- Hero -->
+<section id="hero">
+  <div class="hero-text">
+    <h1>زرین تجارت بهروش</h1>
+    <h2>شریک استراتژیک صنعت فولاد</h2>
+   <h3>تأمین، صادرات و واردات انواع آهن‌آلات و فولاد به بازارهای داخلی و بین‌المللی، با تجربه بیش از ۲۳ سال در صنعت آهن و فولاد منطقه</h3>
+  </div>
+</section>
+
+<!-- درباره شرکت -->
+<section id="about">
+  <h2>درباره شرکت</h2>
+  <p><h3>زرین تجارت بهروش، تأسیس ۱۳۸۰، با بیش از دو دهه تجربه، یکی از معتبرترین شرکت‌های بازرگانی در زمینه تأمین و صادرات تیرآهن، میلگرد، ورق و سایر محصولات فولادی است. دفتر مرکزی شرکت در تهران، خیابان شریعتی، کوچه بینا، ساختمان زرین تجارت بهروش قرار دارد. هدف ما ارائه محصولات با کیفیت و خدمات حرفه‌ای به مشتریان داخلی و خارجی است.</h3>
+</p>
+</section>
+
+<!-- حوزه فعالیت -->
+<section id="products">
+  <h2>حوزه‌های فعالیت / محصولات</h2>
+  <div class="products-grid">
+    <div class="product-card"><img src="C:\Users\Ali Mortazavi\Desktop\Site\tirahan.png"><h3>تیرآهن</h3><p>انواع استاندارد IPE، IPB و INP</p></div>
+    <div class="product-card"><img src="C:\Users\Ali Mortazavi\Desktop\Site\milgerd.jpg"><h3>میلگرد</h3><p>آجدار و ساده، سایزهای مختلف</p></div>
+    <div class="product-card"><img src="C:\Users\Ali Mortazavi\Desktop\Site\varagh.jpg"><h3>ورق</h3><p>ورق فولادی گرم و سرد، گالوانیزه</p></div>
+    <div class="product-card"><img src="C:\Users\Ali Mortazavi\Desktop\Site\haml.jpg"><h3>خدمات صادرات</h3><p>بسته‌بندی، حمل و ترخیص کالا</p></div>
+  </div>
+</section>
+
+<!-- صادرات -->
+<section id="export">
+  <h2>صادرات</h2>
+  <div class="export-grid">
+    <div class="export-card"><img src="C:\Users\Ali Mortazavi\Desktop\Site/tajikestan.jpg" alt="تاجیکستان"><p>تاجیکستان</p></div>
+    <div class="export-card"><img src="C:\Users\Ali Mortazavi\Desktop\Site/iraq.png" alt="عراق"><p>عراق</p></div>
+    <div class="export-card"><img src="C:\Users\Ali Mortazavi\Desktop\Site/syria.png" alt="سوریه"><p>سوریه</p></div>
+    <div class="export-card"><img src="C:\Users\Ali Mortazavi\Desktop\Site//afghanistan.png" alt="افغانستان"><p>افغانستان</p></div>
+  </div>
+</section>
+
+<!-- تماس با ما -->
+<section id="contact">
+  <h2>تماس با ما</h2>
+  <div class="contact-card">
+    <p><strong>تلفن:</strong> 58237-021 / 91009590-021</p>
+    <p><strong>آدرس:</strong> تهران، خیابان شریعتی، کوچه بینا، ساختمان زرین تجارت بهروش</p>
+    <p><strong>ایمیل:</strong> info@ztbco.com</p>
+  </div>
+</section>
+
+<!-- فوتر -->
+<footer>
+<div style="text-align: center;">
+  <p>© 2025 زرین تجارت بهروش. همه حقوق محفوظ است.</p>
+  <p>ورود به فروشگاه آنلاین: <a href="https://ironeed.com">ironeed.com</a></p>
+</div>
+</footer>
+
+<script>
+// انیمیشن ورود هنگام Scroll
+function reveal() {
+  const elements = document.querySelectorAll('section, #hero .hero-text');
+  elements.forEach(el=>{
+    const top = el.getBoundingClientRect().top;
+    const windowH = window.innerHeight;
+    if(top < windowH - 100){
+      el.classList.add('visible');
+    }
+  });
+}
+window.addEventListener('scroll', reveal);
+window.addEventListener('load', reveal);
+</script>
+
+</body>
+</html>
